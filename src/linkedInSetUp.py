@@ -14,6 +14,8 @@ import time
 # -------------------------
 USERNAME = "your_email"       # Replace with your LinkedIn test account email
 PASSWORD = "your_password"    # Replace with your LinkedIn test account password
+#TODO: Replace with your secondary LinkedIn credentials
+
 
 # -------------------------
 # Step 1: Open Chrome Browser
