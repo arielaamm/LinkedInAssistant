@@ -1,26 +1,71 @@
-# Vision Document – LinkedIn Assistant
+# Product Backlog – LinkedIn Assistant
 
-## רקע
-לאחר שניסיתי להיכנס לעולם הלינקדאין, הבנתי שהבעיה המרכזית אינה בפתיחת החשבון אלא ביצירת נוכחות.  
-לא ידעתי מהם הטרנדים, איך ליצור פוסטים שמקבלים חשיפה, ולא היה לי את הזמן והכוח להתחיל לבנות זאת בעצמי.
+## Epic
 
-מתוך צורך אישי זה נולד הרעיון לבנות תוכנה – עוזר אישי ללינקדאין – שתוכל לייעל את התהליך.
+**Epic:** Collect, analyze, and generate LinkedIn posts using AI to help users understand trends and create relevant content.
 
-## החזון
-העוזר יאתר פוסטים מצליחים, יזהה את הטרנדים, יעביר את המידע ל-AI, שיגנרט פוסטים רלוונטיים, ואף יפרסם אותם באופן אוטומטי – במטרה לעלות על הגל ולבנות נוכחות מקצועית בלינקדאין.
+---
 
-## קשיים צפויים
-- **התחלה איטית:** כמשתמש חדש בלינקדאין חשוב לא לפרסם באופן מוגזם אלא להבין קודם את הדרך הנכונה.  
-- **הגבלות טכניות:** לינקדאין מקשים מאוד על שאיבת מידע (scraping) ואף חוסמים חשבונות שנראה שפועלים בצורה אוטומטית.  
-- **פורמט מידע משתנה:** כדי לשאוב נתונים בצורה יעילה יש צורך בתבניות יציבות, בעוד לינקדאין משנים את הממשק לעיתים קרובות כדי להקשות על כך.
+## User Story 1
 
-## פתרונות אפשריים
-- פיתוח מספר **מודים שונים** שיתנו פרומפטים מגוונים ל-AI (למשל: פוסט מקצועי, פוסט אישי, פוסט עם נתונים).  
-- שימוש בחשבון ייעודי לשאיבה עם **הדמיית התנהגות אנושית** – הפסקות רנדומליות, גלילה איטית, ולחיצות אקראיות.  
-- שימוש במודל AI שמביט באתר **"בעיניים של אדם"** ומזהה פוסטים מצליחים על בסיס פרמטרים ויזואליים ותוכניים.
+**Story:**  
+As a new LinkedIn user, I want the system to collect trending posts by topic so I can know the trends.
 
-## מדדי הצלחה
-- אימון מודל AI שמזהה פוסטים מובילים.  
-- שאיבה מלאה של פוסט (טקסט, תמונה, מספר לייקים ותגובות).  
-- גנרציה של פוסטים איכותיים על ידי ה-AI (לפי מודים שונים).  
-- יכולת פרסום אוטומטי תוך שמירה על התנהגות טבעית.
+**Acceptance Criteria:**  
+
+- Returns at least 20 posts per topic.  
+- Each post contains text + number of likes + number of comments + hashtags.  
+- Posts are collected chronologically or by popularity.  
+- Mimics human behavior to avoid blocking.
+
+**Tasks:**  
+
+1. Connect to LinkedIn using Selenium or API.  
+2. Perform a search by keyword/topic.  
+3. Collect posts – text, likes, comments, hashtags.  
+4. Save data to CSV or database.  
+5. Verify at least one post is collected correctly.
+
+---
+
+## User Story 2
+
+**Story:**  
+As a user, I want the system to analyze hashtags and likes to understand popular topics.
+
+**Acceptance Criteria:**  
+
+- Extracts all hashtags from collected posts.  
+- Calculates the frequency of hashtags and shows the top 10.  
+- Calculates average likes per hashtag/topic.  
+- Analysis is presented in a readable format (table or chart).
+
+**Tasks:**  
+
+1. Read CSV from User Story 1.  
+2. Extract hashtags from each post.  
+3. Calculate frequency of each hashtag.  
+4. Calculate average likes per hashtag.  
+5. Present results in a table or chart.
+
+---
+
+## User Story 3
+
+**Story:**  
+As a user, I want the system to generate post ideas automatically based on trends so I can create relevant content.
+
+**Acceptance Criteria:**  
+
+- Receives input from hashtags/trends from User Story 2.  
+- Generates at least 3 post ideas per trend.  
+- Posts are readable and ready for copy/paste.  
+- System can select different modes (professional, personal, experiential).
+
+**Tasks:**  
+
+1. Use AI (e.g., GPT) to generate text for posts.  
+2. Provide hashtags/trends as input to AI.  
+3. Define different modes for post generation.  
+4. Save or display generated posts.  
+5. Ensure posts are relevant and trend-focused.
