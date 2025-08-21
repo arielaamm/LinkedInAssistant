@@ -1,3 +1,7 @@
+# LinkedIn Assistant PoC – Part 1: Setup and Login
+# This script demonstrates connecting to LinkedIn and opening the main feed.
+# It is the first step in the PoC before collecting posts.
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -5,28 +9,47 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-# פתיחת הדפדפן
+# -------------------------
+# Configuration
+# -------------------------
+USERNAME = "your_email"       # Replace with your LinkedIn test account email
+PASSWORD = "your_password"    # Replace with your LinkedIn test account password
+
+# -------------------------
+# Step 1: Open Chrome Browser
+# -------------------------
+# Using webdriver-manager to automatically manage ChromeDriver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.maximize_window()
+driver.maximize_window()  # Maximize window to ensure elements are visible
 
-# כניסה ללינקדאין
+# -------------------------
+# Step 2: Navigate to LinkedIn Login Page
+# -------------------------
 driver.get("https://www.linkedin.com/login")
+time.sleep(2)  # Wait for the page to load
 
-# הכנס את פרטי המשתמש שלך כאן
-USERNAME = "arialaamm@gmail.com"
-PASSWORD = "trhtkaamm"
+# -------------------------
+# Step 3: Enter Login Credentials
+# -------------------------
+username_field = driver.find_element(By.ID, "username")
+password_field = driver.find_element(By.ID, "password")
 
-# מציאת שדות ההתחברות והזנת פרטים
-driver.find_element(By.ID, "username").send_keys(USERNAME)
-driver.find_element(By.ID, "password").send_keys(PASSWORD)
-driver.find_element(By.ID, "password").send_keys(Keys.RETURN)
+username_field.send_keys(USERNAME)
+password_field.send_keys(PASSWORD)
+password_field.send_keys(Keys.RETURN)  # Press Enter to login
 
-time.sleep(5)  # המתנה לטעינת הדף
+# Wait for login to complete and main feed to load
+time.sleep(5)
 print("Login successful!")
 
-# אפשר לבדוק פתיחת הדף הראשי
+# -------------------------
+# Step 4: Navigate to Main Feed
+# -------------------------
 driver.get("https://www.linkedin.com/feed/")
-time.sleep(5)
+time.sleep(5)  # Wait for feed to fully load
+print("Feed loaded successfully")
 
-print("Feed loaded")
+# -------------------------
+# Step 5: Close Browser
+# -------------------------
 driver.quit()
