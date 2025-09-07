@@ -2,7 +2,7 @@
 # This script demonstrates connecting to LinkedIn and opening the main feed.
 # It is the first step in the PoC before collecting posts.
 
-#linkedInSetUp.py
+#auth.py
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -39,7 +39,7 @@ def open_feed(driver):
     time.sleep(5)  # Wait for feed to fully load
     print("Feed loaded successfully")
 
-def run_linkedin(username, password):
+def run_linkedin_login(username, password):
     """Full LinkedIn login flow"""
     driver = start_browser()
     login_linkedin(driver, username, password)
