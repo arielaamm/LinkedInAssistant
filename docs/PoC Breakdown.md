@@ -23,7 +23,7 @@ The goal is to create a base that can be extended into a full project.
 - Use a dedicated test account.  
 - `time.sleep()` is essential to wait for page loads.
 
-[x] Done
+[x] Done.
 
 ---
 
