@@ -56,7 +56,6 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -170,9 +169,7 @@ cython_debug/
 data/images/*
 !data/images/.gitkeep
 
-# Logs
-*.log
-logs/
+
 
 # Configuration files with sensitive data
 config_local.py

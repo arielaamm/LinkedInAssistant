@@ -1,0 +1,140 @@
+﻿2025-08-21 22:13 [INFO] docs - Add initial Vision Document and Product Backlog (commit=009c625, author=Ariel Moreshet)
+Summary: Add initial Vision Document and Product Backlog 
+Files (2, +87/-0):
+- docs/Vision Document.md (+26/-0)
+- docs/product_backlog.md (+61/-0)
+Tags: docs, planning
+Intent: Add new capability
+Rationale: Align direction and document decisions
+Impact: New features available
+
+2025-08-21 22:38 [INFO] devEnvironment - Add launch configuration for Python debugging (commit=47ff1a5, author=Ariel Moreshet)
+Summary: Add launch configuration for Python debugging 
+Files (1, +16/-0):
+- .vscode/launch.json (+16/-0)
+Tags: devEnvironment
+Intent: Add new capability
+Rationale: Infrastructure and user value improvements
+Impact: New features available
+
+2025-08-21 22:38 [INFO] linkedInSetUp - Add LinkedIn setup automation script using Selenium (commit=d72f1ef, author=Ariel Moreshet)
+Summary: Add LinkedIn setup automation script using Selenium 
+Files (1, +32/-0):
+- src/linkedInSetUp.py (+32/-0)
+Tags: python, selenium, auth
+Intent: Add new capability
+Rationale: Simplify sign-in flow and automation
+Impact: New features available
+
+2025-08-21 22:54 [INFO] docs - Add architecture overview (commit=14dabde, author=Ariel Moreshet)
+Summary: Add architecture overview 
+Files (1, +32/-0):
+- docs/Architecture.md (+32/-0)
+Tags: docs, architecture
+Intent: Add new capability
+Rationale: Align direction and document decisions
+Impact: New features available
+
+2025-08-21 22:54 [INFO] docs - Add product backlog for LinkedIn Assistant with user stories and acceptance criteria (commit=d0f7010, author=Ariel Moreshet)
+Summary: Add product backlog for LinkedIn Assistant with user stories and acceptance criteria 
+Files (2, +71/-61):
+- docs/Product Backlog.md (+71/-0)
+- docs/product_backlog.md (+0/-61)
+Tags: docs, planning
+Intent: Add new capability
+Rationale: Align direction and document decisions
+Impact: New features available
+
+2025-08-21 22:55 [INFO] docs - Add PoC Breakdown document outlining project structure and tasks (commit=67a7192, author=Ariel Moreshet)
+Summary: Add PoC Breakdown document outlining project structure and tasks 
+Files (2, +149/-20):
+- docs/PoC Breakdown.md (+84/-0)
+- docs/Vision Document.md (+65/-20)
+Tags: docs, poc
+Intent: Add new capability
+Rationale: Infrastructure and user value improvements
+Impact: New features available
+
+2025-08-21 23:01 [DECISION] linkedInSetUp - Refactor LinkedIn setup script for clarity and organization (commit=f633c97, author=Ariel Moreshet)
+Summary: Refactor LinkedIn setup script for clarity and organization 
+Files (1, +37/-14):
+- src/linkedInSetUp.py (+37/-14)
+Tags: python, refactor, auth
+Intent: Improve code structure and maintainability
+Rationale: Reduce duplication and improve readability
+Impact: Less dead code and cleaner flow
+
+2025-08-21 23:03 [TODO] linkedInSetUp - Add TODO comment for secondary LinkedIn credentials in setup script (commit=251cccb, author=Ariel Moreshet)
+Summary: Add TODO comment for secondary LinkedIn credentials in setup script 
+Files (1, +2/-0):
+- src/linkedInSetUp.py (+2/-0)
+Tags: python, auth
+Intent: Add new capability
+Rationale: Simplify sign-in flow and automation
+Impact: New features available
+
+2025-09-07 12:12 [INFO] devEnvironment - Implement LinkedIn login flow and add .env to .gitignore (commit=2dffa78, author=Ariel Moreshet)
+Summary: Implement LinkedIn login flow and add .env to .gitignore 
+Files (5, +63/-46):
+- .gitignore (+1/-0)
+- .vscode/settings.json (+6/-0)
+- docs/PoC Breakdown.md (+2/-0)
+- src/linkedInSetUp.py (+36/-46)
+- src/main.py (+18/-0)
+Tags: git, devEnvironment, docs, python, auth
+Intent: Add new capability
+Rationale: Simplify sign-in flow and automation
+Impact: New features available
+
+2025-09-07 12:18 [INFO] docs - PoC Stage 1 complete: LinkedIn setup and login implemented (commit=dce741f, author=Ariel Moreshet)
+Summary: PoC Stage 1 complete: LinkedIn setup and login implemented 
+Files (1, +1/-1):
+- docs/PoC Breakdown.md (+1/-1)
+Tags: docs, auth, poc
+Intent: Add new capability
+Rationale: Simplify sign-in flow and automation
+Impact: New features available
+
+2025-09-07 13:08 [DECISION] core - Refactor LinkedIn automation: consolidate setup and login functionality into auth.py, update main.py to utilize new structure, and remove obsolete files (commit=97135a5, author=Ariel Moreshet)
+Summary: Refactor LinkedIn automation: consolidate setup and login functionality into auth.py, update main.py to utilize new structure, and remove obsolete files 
+Files (7, +5/-5):
+- config.py (+0/-0)
+- src/main.py => main.py (+3/-3)
+- src/{linkedInSetUp.py => linkedin/auth.py} (+2/-2)
+- src/linkedin/scrape.py (+0/-0)
+- src/linkedin/search.py (+0/-0)
+- src/utils/__init__.py (+0/-0)
+- src/utils/file_ops.py (+0/-0)
+Tags: python, config, linkedin, utils, refactor, auth
+Intent: Improve code structure and maintainability
+Rationale: Reduce duplication and improve readability
+Impact: Less dead code and cleaner flow
+
+2025-09-07 13:22 [INFO] core - Add configuration and search functionality for LinkedIn automation (commit=59acdd1, author=Ariel Moreshet)
+Summary: Add configuration and search functionality for LinkedIn automation 
+Files (2, +21/-0):
+- config.py (+4/-0)
+- src/linkedin/search.py (+17/-0)
+Tags: python, config, linkedin, search
+Intent: Add new capability
+Rationale: Expand LinkedIn search coverage
+Impact: New features available
+
+2025-09-09 00:41 [DECISION] devEnvironment - Update .gitignore, refactor main.py for LinkedIn search functionality, and remove obsolete files. Consolidate LinkedIn login and search into a streamlined structure. (commit=5881215, author=Ariel Moreshet)
+Summary: Update .gitignore, refactor main.py for LinkedIn search functionality, and remove obsolete files. Consolidate LinkedIn login and search into a streamlined structure. 
+Files (10, +229/-13):
+- .gitignore (+214/-1)
+- .vscode/launch.json (+1/-1)
+- .vscode/settings.json (+0/-6)
+- {src/utils => linkedin}/__init__.py (+0/-0)
+- {src/linkedin => linkedin}/auth.py (+0/-0)
+- {src/linkedin => linkedin}/scrape.py (+0/-0)
+- {src/linkedin => linkedin}/search.py (+6/-2)
+- main.py (+8/-3)
+- src/utils/file_ops.py => utils/__init__.py (+0/-0)
+- utils/file_ops.py (+0/-0)
+Tags: git, devEnvironment, python, utils, refactor, search, auth
+Intent: Improve code structure and maintainability
+Rationale: Reduce duplication and improve readability
+Impact: Less dead code and cleaner flow
+
