@@ -12,10 +12,10 @@ def search_posts(driver, keyword):
     search_box.clear()
     search_box.send_keys(keyword)
     search_box.send_keys(Keys.RETURN)
-    time.sleep(3)
-    posts_tab = WebDriverWait(driver, 10).until(
+    time.sleep(2)
+    posts_tab = WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.XPATH, "//button[text()='Posts']"))
     )
     posts_tab.click()
-    time.sleep(5)
+    time.sleep(2)
     print(f"Search results for '{keyword}' loaded.")

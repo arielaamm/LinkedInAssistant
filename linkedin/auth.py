@@ -30,16 +30,16 @@ def login_linkedin(driver, username, password):
     password_field.send_keys(Keys.RETURN)  # Press Enter to login
 
     # Wait for login to complete and main feed to load
-    time.sleep(5)
+    time.sleep(2)
     print("Login successful!")
 
 def open_feed(driver):
     """Navigate to the LinkedIn main feed"""
     driver.get("https://www.linkedin.com/feed/")
-    time.sleep(5)  # Wait for feed to fully load
+    time.sleep(2)  # Wait for feed to fully load
     print("Feed loaded successfully")
 
-def run_linkedin_login(username, password):
+def run_linkedin_login(username, password) -> webdriver.Chrome:
     """Full LinkedIn login flow"""
     driver = start_browser()
     login_linkedin(driver, username, password)
